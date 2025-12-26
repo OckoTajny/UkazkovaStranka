@@ -3,11 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styly.css">
     <script src="api.js"></script>
-    <title>Document</title>
+    <title>API Test</title>
 </head>
 <body>
-    <button onclick="testik()">testik</button>
-    <span id="spanik"></span>
+    <div id="container" >
+        <button onclick="testik()">Poslat request</button>
+        <div class="box">
+            <div class="diagram">
+                <div class="endpoint">CLIENT</div>
+                <div class="lane">
+                    <div class="packet"></div>
+                </div>
+                <div class="endpoint">SERVER</div>
+            </div>
+            <pre id="response"></pre>
+        </div>
+    </div>
 </body>
 </html>
