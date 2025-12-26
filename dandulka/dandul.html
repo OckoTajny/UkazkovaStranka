@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styly.css">
     <script src="api.js"></script>
     <title>Document</title>
 </head>
 <body>
-    <button onclick="testik()">testik</button>
-    <span id="spanik"></span>
+    <main class="test">
+        <h1>tohle je ukazatel velmi jednoduché API</h1>
+        <p>Velmi podobné API děláme v next.js routingu</p>
+        <p>tato api vrací datetime a zprávu, je hostlá na <a href="https://deno.dev">deno.dev</a></p>
+        <button onclick="testik()">FETCH</button>
+        <span id="spanik">tady se ukáže odpověď serveru</span>
+        <span id="humanTime"></span>
+    </main>
 </body>
 </html>
