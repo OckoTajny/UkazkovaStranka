@@ -1,11 +1,12 @@
+/* ========== FONTS & IMPORTS ========== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap');
 
-.box{
+/* ========== BOX & CONTAINER STYLES ========== */
+.box {
     background: linear-gradient(135deg, #ffffff 0%, #f8fdf9 100%);
     border-radius: 40px;
     width: 80%;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding: 60px;
     font-family: 'Inter', sans-serif;
     display: flex;
     flex-direction: column;
@@ -15,7 +16,6 @@
     border: 2px solid rgba(39, 174, 96, 0.15);
 }
 
-/* ===== IMAGE STYLES ===== */
 .box img, .reacticon {
     max-width: 280px;
     width: 100%;
@@ -23,34 +23,69 @@
     display: block;
     filter: drop-shadow(0 8px 20px rgba(39, 174, 96, 0.15));
 }
-.box p{
-    font-size: 18px;
-    color: #555;
-    line-height: 1.7;
-    font-weight: 500;
-}
-h1{
-    font-size: 50px;
-    color: #1a5f3a;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    margin: 0;
-    letter-spacing: -0.5px;
-}
 
-body{
-    background: linear-gradient(135deg, #ffffff 0%, #f0faf2 50%, #e8f7ee 100%);
+.box p { font-size: 18px; color: #555; line-height: 1.7; font-weight: 500; }
+
+h1 { font-size: 50px; color: #1a5f3a; font-family: 'Poppins', sans-serif; font-weight: 700; margin: 0; letter-spacing: -0.5px; }
+
+/* ========== BODY & BACKGROUND ========== */
+body {
+    background: linear-gradient(-45deg, #1a5f3a, #27ae60, #16a34a, #0d7a3b);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
     padding-top: 150px;
     min-height: 100vh;
     font-family: 'Inter', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+    margin: 0
 }
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(39, 174, 96, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(22, 163, 74, 0.3) 0%, transparent 50%), radial-gradient(circle at 40% 20%, rgba(13, 122, 59, 0.2) 0%, transparent 50%);
+    animation: floatingBlobs 20s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at 60% 40%, rgba(255, 255, 255, 0.08) 0%, transparent 40%), radial-gradient(circle at 10% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 40%);
+    animation: shimmer 8s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+html::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.9) 2.5px, transparent 2.5px);
+    background-size: 60px 60px;
+    animation: gridFloat 5s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes gridFloat { to { background-position: 60px -60px; } }
+@keyframes gradientShift { 50% { background-position: 100% 50%; } }
+@keyframes floatingBlobs { 33% { transform: translate(30px, -50px) scale(1.1); } 66% { transform: translate(-30px, 50px) scale(0.9); } }
+@keyframes shimmer { 50% { opacity: 1; } }
+@keyframes pulse { 50% { opacity: 0.6; } }
+
+/* ========== HEADER & NAVIGATION ========== */
+nav, header, section { position: relative; z-index: 1; }
 
 header {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(0, 115, 13, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(0, 115, 13, 0.95) 100%);
     padding: 12px 40px;
     z-index: 1000;
     display: flex;
@@ -61,112 +96,39 @@ header {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
-header img {
-    height: 80px;
-    width: 80px;
-}
+header img { height: 80px; width: 80px; }
 
-nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    padding-bottom: 60px;
-}
+nav { display: flex; flex-direction: column; gap: 40px; padding-bottom: 60px; justify-content: center; align-items: center; }
 
-/* ===== SECTION STYLES ===== */
-.section {
-    width: 85%;
-    max-width: 1000px;
-    padding: 50px 40px;
-    border-radius: 40px;
-}
+/* ========== SECTIONS & LAYOUT ========== */
+.section { width: 85%; max-width: 1000px; padding: 50px 40px; border-radius: 40px; }
 
-/* REACT SECTION */
 .react-section {
-    background: linear-gradient(135deg, #ffffff 0%, #f0faf2 100%);
+    background: rgba(255, 255, 255, 0.8);
     border: 2px solid rgba(39, 174, 96, 0.2);
     box-shadow: 0 12px 48px rgba(39, 174, 96, 0.12);
 }
 
-.react-section .nadpis {
-    background: linear-gradient(135deg, #1a5f3a 0%, #27ae60 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: none;
-}
+.react-section .nadpis { background: linear-gradient(135deg, #1a5f3a 0%, #19eb71 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 
-.content-wrapper {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
+/* ========== CONTENT & TEXT ========== */
+.content-wrapper { display: flex; gap: 40px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
 
-.text-content {
-    flex: 1;
-    min-width: 300px;
-}
+.text-content { flex: 1; min-width: 300px; }
+.text-content p { margin: 16px 0; text-align: left; color: #444; }
+.text-content strong { color: #1a5f3a; font-weight: 700; }
 
-.text-content p {
-    margin: 16px 0;
-    text-align: left;
-    color: #444;
-}
+.image-content { flex: 0 1 300px; display: flex; justify-content: center; align-items: center; padding: 20px; }
 
-.text-content strong {
-    color: #1a5f3a;
-    font-weight: 700;
-}
+/* ========== API SECTION ========== */
+.api-section { background: rgba(255, 255, 255, 0.8); display: flex; justify-content: center; border: 2px solid rgba(39, 174, 96, 0.25); box-shadow: 0 12px 48px rgba(39, 174, 96, 0.15); }
+.api-section h2 { font-size: 36px; color: #1a5f3a; font-family: 'Poppins', sans-serif; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.5px; }
 
-.image-content {
-    flex: 0 1 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
+p { color: #555; font-size: 16px; text-align: center; line-height: 1.8; font-weight: 500; }
 
-/* API SECTION */
-.api-section {
-    background: linear-gradient(135deg, #ffffff 0%, #f9fdfb 100%);
-    display: flex;
-    justify-content: center;
-    border: 2px solid rgba(39, 174, 96, 0.25);
-    box-shadow: 0 12px 48px rgba(39, 174, 96, 0.15);
-}
-
-.api-section h2 {
-    font-size: 36px;
-    color: #1a5f3a;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    margin-bottom: 8px;
-    letter-spacing: -0.5px;
-}
-
-h1 {
-    color: #1a5f3a;
-    font-size: 32px;
-    text-align: center;
-    font-weight: 700;
-    font-family: 'Poppins', sans-serif;
-    margin: 0 0 10px 0;
-}
-
-p {
-    color: #555;
-    font-size: 16px;
-    text-align: center;
-    line-height: 1.8;
-    font-weight: 500;
-}
-
+/* ========== TEST CONTAINER ========== */
 .test {
-    background: linear-gradient(135deg, #ffffff 0%, #f9fdfb 100%);
+    background: rgba(255, 255, 255, 0.0);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -178,16 +140,9 @@ p {
     border-radius: 24px;
 }
 
-a {
-    color: #27ae60;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.2s ease;
-}
-
-a:hover {
-    color: #1e8449;
-}
+/* ========== LINKS & BUTTONS ========== */
+a { color: #27ae60; text-decoration: none; font-weight: 600; transition: color 0.2s ease; }
+a:hover { color: #1e8449; }
 
 button {
     background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
@@ -215,20 +170,11 @@ button::before {
     transition: left 0.3s ease;
 }
 
-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(39, 174, 96, 0.35);
-}
+button:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(39, 174, 96, 0.35); }
+button:hover::before { left: 100%; }
+button:active { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(39, 174, 96, 0.25); }
 
-button:hover::before {
-    left: 100%;
-}
-
-button:active {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.25);
-}
-
+/* ========== OUTPUT & INPUT ELEMENTS ========== */
 #spanik {
     background: linear-gradient(135deg, #f0faf2 0%, #e8f7ee 100%);
     border: 2px solid #27ae60;
@@ -245,29 +191,9 @@ button:active {
     transition: all 0.3s ease;
 }
 
-#spanik:not(:empty) {
-    box-shadow: inset 0 2px 8px rgba(39, 174, 96, 0.1);
-}
+#spanik:not(:empty) { box-shadow: inset 0 2px 8px rgba(39, 174, 96, 0.1); }
+#spanik.loading { animation: pulse 1.5s ease-in-out infinite; }
 
-#humanTime {
-    color: #27ae60;
-    font-size: 16px;
-    font-weight: 600;
-    min-height: 24px;
-}
+#humanTime { color: #27ae60; font-size: 16px; font-weight: 600; min-height: 24px; }
 
-@keyframes dots {
-    0%, 20% { content: "Načítám" }
-    40% { content: "Načítám." }
-    60% { content: "Načítám.." }
-    80%, 100% { content: "Načítám..." }
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.6; }
-}
-
-#spanik.loading {
-    animation: pulse 1.5s ease-in-out infinite;
-}
+/* ========== END OF STYLES ========== */
