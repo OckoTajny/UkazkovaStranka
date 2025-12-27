@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ukázková Stránka Říčany</title>
     <link rel="stylesheet" href="static/styles.css">
+    <script src="api.js"></script>
 </head>
 <body>
     <header>
@@ -27,8 +28,16 @@
                 </p>
             </div>
             <div>
-            <img src="static/reactjs-svgrepo-com.svg" >
+            <img src="static/reactjs-svgrepo-com.svg" class="reacticon" >
             </div>
+            <main class="test">
+                <h1>tohle je ukazatel velmi jednoduché API</h1>
+                <p>Velmi podobné API děláme v next.js routingu</p>
+                <p>tato api vrací datetime a zprávu, je hostlá na <a href="https://deno.dev">deno.dev</a></p>
+                <button onclick="testik()">FETCH</button>
+                <span id="spanik">tady se ukáže odpověď serveru</span>
+                <span id="humanTime"></span>
+            </main>
         </div>
     </nav>
     </body>
