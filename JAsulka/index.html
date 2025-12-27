@@ -14,31 +14,38 @@
         <a href="index.html"><img src="static/ricany-logo.svg"></a>
     </header>
     <nav>
-        <div class="box">
-            <div>
-                <h1 class="nadpis">React</h1>
-                <p>
-                ReactJS je moderní JavaScriptová knihovna pro tvorbu dynamických uživatelských rozhraní, kterou vyvíjí společnost Meta. Její hlavní síla spočívá v tom, že mění pohled na vývoj webu – místo psaní složitého kódu pro celou stránku najednou ji rozděluje na menší, samostatné části zvané komponenty.
-                </p>
-                <p>
-                Díky této <strong>komponentové architektuře</strong> funguje React jako stavebnice; jednou vytvořené prvky můžete používat opakovaně napříč celou aplikací. To v kombinaci s technologií <strong>Virtual DOM</strong> zaručuje extrémní rychlost, protože se při interakci uživatele aktualizují pouze ty části stránky, které se skutečně změnily, nikoliv celý web.
-                </p>
-                <p>
-                <em>Written by Gemini</em>
-                </p>
+        <!-- REACT SECTION -->
+        <section class="section react-section">
+            <div class="content-wrapper">
+                <div class="text-content">
+                    <h1 class="nadpis">React</h1>
+                    <p>
+                    ReactJS je moderní JavaScriptová knihovna pro tvorbu dynamických uživatelských rozhraní, kterou vyvíjí společnost Meta. Její hlavní síla spočívá v tom, že mění pohled na vývoj webu – místo psaní složitého kódu pro celou stránku najednou ji rozděluje na menší, samostatné části zvané komponenty.
+                    </p>
+                    <p>
+                    Díky této <strong>komponentové architektuře</strong> funguje React jako stavebnice; jednou vytvořené prvky můžete používat opakovaně napříč celou aplikací. To v kombinaci s technologií <strong>Virtual DOM</strong> zaručuje extrémní rychlost, protože se při interakci uživatele aktualizují pouze ty části stránky, které se skutečně změnily, nikoliv celý web.
+                    </p>
+                    <p>
+                    <em>Written by Gemini</em>
+                    </p>
+                </div>
+                <div class="image-content">
+                    <img src="static/reactjs-svgrepo-com.svg" class="reacticon" alt="React Logo">
+                </div>
             </div>
-            <div>
-            <img src="static/reactjs-svgrepo-com.svg" class="reacticon" >
-            </div>
+        </section>
+
+        <!-- API SECTION -->
+        <section class="section api-section">
             <main class="test">
-                <h1>tohle je ukazatel velmi jednoduché API</h1>
-                <p>Velmi podobné API děláme v next.js routingu</p>
-                <p>tato api vrací datetime a zprávu, je hostlá na <a href="https://deno.dev">deno.dev</a></p>
-                <button onclick="testik()">FETCH</button>
-                <span id="spanik">tady se ukáže odpověď serveru</span>
+                <h2>API Demo</h2>
+                <p>Testovací API server s datetime odpovědí</p>
+                <p>Velmi podobné API děláme v next.js routingu - hostováno na <a href="https://deno.dev">deno.dev</a></p>
+                <button onclick="testik()">FETCH DATA</button>
+                <span id="spanik">Kliknutím na tlačítko se zde zobrazí odpověď serveru</span>
                 <span id="humanTime"></span>
             </main>
-        </div>
+        </section>
     </nav>
     </body>
 </html>
