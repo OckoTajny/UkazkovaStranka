@@ -1,0 +1,17 @@
+------------------------------------------------------
+O nás:
+Jsme Daniel a Jáchym, oba z Gymnázia říčany. Naše zájmy jsou hlavně IKT, a to kyberbezpečnost
+od reversingu až po osint a pwn. Ale hlavně se oba zajímáme o tvorbu webů.
+----------------------------------------------------------------------------------------------
+Co umíme:
+Umíme samozřejmě HTML, CSS a JS, to jsme se učili rok a doteď učíme. Co se týče jazyků oba zvládáme ještě python.
+Pracujeme s JSONy a node.js
+-----------------------------------------------------------------
+React a next.js:
+Další naše dovednost je next.js, Javascriptová knihovna na tvorbu webů, která funguje na bázi komponentů, jsou to
+části HTML kódu, které se potom pomocí react commandů dají přetvořit do https serveru, který posílá celé html.
+Umí k tomu ještě routing, které se stará o všechna API, hostování je velmi jednoduché pomocí třetích stran (vercel, render).
+next.js k tomu ještě přidává server side rendering a tím vše zrychluje.
+---------------------------------------------------------------------------
+Databáze:
+Umíme postgreSQL a zároveň umíme hostovat (supabase, prisma atd.)
