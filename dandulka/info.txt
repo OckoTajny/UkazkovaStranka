@@ -14,4 +14,4 @@ Umí k tomu ještě routing, které se stará o všechna API, hostování je vel
 next.js k tomu ještě přidává server side rendering a tím vše zrychluje.
 ---------------------------------------------------------------------------
 Databáze:
-Umíme postgreSQL a zároveň umíme hostovat (supabase, prisma atd.)
+Co se týče databází, umíme pracovat s SQL databázemi a hlavně s SQLite a postgreSQL, kterou bychom chtěli použít i na tento projekt.
