@@ -8,6 +8,7 @@
     <title>Ukázková Stránka Říčany</title>
     <link rel="stylesheet" href="static/styles.css">
     <script src="api.js"></script>
+    <script src="gemini.js"></script>
 </head>
 <body>
     <header>
@@ -44,6 +45,16 @@
                 <button onclick="testik()">FETCH DATA</button>
                 <span id="spanik">Kliknutím na tlačítko se zde zobrazí odpověď serveru</span>
                 <span id="humanTime"></span>
+            </main>
+        </section>
+        <section class="section gemini-showcase">
+            <main>
+                <h2>AI Showcase</h2>
+                <form >
+                    <input id="userPrompt">
+                    <button onclick="run(event)">Submit</button>
+                    <p id="aiResponse"></p>
+                </form>
             </main>
         </section>
     </nav>
