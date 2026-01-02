@@ -26,10 +26,13 @@ client = genai.Client(api_key=os.environ.get("GOOGLE_API_KEY"))
 # Definice struktury příchozího JSONu
 class PromptRequest(BaseModel):
     userPrompt: str
+    password: str
 
 @app.post("/")
 async def generate_response(request: PromptRequest):
     try:
+        if request.password != "ricany":
+            return {"message": "Wrong password", "success": False}
         if not request.userPrompt:
             return {"message": "You need to send prompt", "success": False}
 

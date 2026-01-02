@@ -1,21 +1,26 @@
 async function run(event) {
     event.preventDefault();
     const userPrompt = document.getElementById("userPrompt").value;
-    document.getElementById("aiResponse").innerText = "Loading";
-
+    document.getElementById("aiResponse").innerText = "Loading...";
+    const password = document.getElementById("password").value
     try {
-        const response = await fetch("http://127.0.0.1:8000/", {
+        const response = await fetch("https://ukazkovastranka.onrender.com/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                userPrompt
+                userPrompt,
+                password
             })
         });
         const data = await response.json();
         const text = data.result;
+        if (text == undefined){
+            document.getElementById("aiResponse").innerHTML = `<p  style="color: red;">Error: Wrong password</p>`;
+            return; 
+        }
         // 4. Vypiš výsledek
         console.log(text);
-        document.getElementById("aiResponse").innerText = text;
+        document.getElementById("aiResponse").innerHTML = `<p>${text}</p>`;
     } catch (error) {
         console.error("Chyba při komunikaci s AI:", error);
         document.getElementById("aiResponse").innerText = "Chyba při komunikaci s AI.";
