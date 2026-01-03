@@ -318,6 +318,17 @@ nav {
     box-sizing: border-box;
 }
 
+.gemini-showcase #aiResponse strong {
+    color: #1a5f3a;
+    font-weight: 700;
+}
+
+.gemini-showcase #aiResponse em {
+    font-style: italic;
+    color: #1a5f3a;
+}
+
+
 /* Custom Scrollbar for AI Response */
 .gemini-showcase #aiResponse::-webkit-scrollbar {
     width: 8px;

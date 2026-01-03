@@ -20,9 +20,23 @@ async function run(event) {
         }
         // 4. Vypiš výsledek
         console.log(text);
-        document.getElementById("aiResponse").innerHTML = `<p>${text}</p>`;
+        document.getElementById("aiResponse").innerHTML = parseMarkdown(text);
     } catch (error) {
         console.error("Chyba při komunikaci s AI:", error);
         document.getElementById("aiResponse").innerText = "Chyba při komunikaci s AI.";
     }
+}
+
+function parseMarkdown(text) {
+    if (!text) return "";
+    
+    return text
+        // Tučné písmo (**text** nebo __text__)
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/__(.*?)__/g, '<strong>$1</strong>')
+        // Kurzíva (*text* nebo _text_)
+        .replace(/\*(.*?)\*/g, '<em>$1</em>')
+        .replace(/_(.*?)_/g, '<em>$1</em>')
+        // Nové řádky
+        .replace(/\n/g, '<br>');
 }
