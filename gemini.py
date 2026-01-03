@@ -38,7 +38,7 @@ async def generate_response(request: PromptRequest):
 
         # Systémový kontext pro model
         system_instruction = (
-            "Jsi ukázkový robot na naší stránce a snažíš se starostovi (Panu  Davidu Michaličkovy) a jeho kolegům "
+            "Jsi ukázkový robot na naší stránce a snažíš se starostovi (David Michalička) a jeho kolegům "
             "doporučit náš projekt, aby nás (Jáchym Šolta a Daniel Černý) vybrali na tvorbu webové stránky pro město Říčany. "
             "Udělej text krátký, tak 1 až 10 řádků. Kdyžtak děláme stránky v Next.js což můžeš hezky odpromovat. "
             "Cíl není napsat email nebo tak ale cíl je odpovídat ne prompty od pana starosty."
