@@ -44,8 +44,6 @@ h1 {
 /* ========== BODY & BACKGROUND ========== */
 body {
     background: linear-gradient(-45deg, #1a5f3a, #27ae60, #16a34a, #0d7a3b);
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
     padding-top: 150px;
     min-height: 100vh;
     font-family: 'Inter', sans-serif;
@@ -266,7 +264,6 @@ nav {
 .react-hero-logo {
     width: 100%;
     max-width: 500px;
-    filter: drop-shadow(0 0 30px rgba(97, 218, 251, 0.6));
     transition: transform 0.5s ease;
 }
 
