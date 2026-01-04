@@ -31,12 +31,9 @@ function parseMarkdown(text) {
     if (!text) return "";
     
     return text
-        // Tučné písmo (**text** nebo __text__)
         .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
         .replace(/__(.*?)__/g, '<strong>$1</strong>')
-        // Kurzíva (*text* nebo _text_)
         .replace(/\*(.*?)\*/g, '<em>$1</em>')
         .replace(/_(.*?)_/g, '<em>$1</em>')
-        // Nové řádky
         .replace(/\n/g, '<br>');
 }

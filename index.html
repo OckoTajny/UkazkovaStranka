@@ -17,23 +17,29 @@
         <a href="index.html"><img src="static/ricany-logo.svg"></a>
     </header>
     <nav>
-        <!-- O NÁS SECTION -->
-        <section class="section react-section about-section">
+        <!-- HERO / O NÁS SECTION -->
+        <section class="hero-section">
             <div class="content-wrapper">
                 <div class="text-content">
-                    <h1 class="nadpis">O nás</h1>
-                    <p>
-                        Ahoj, jsme <strong>Daniel a Jáchym</strong>, oba z <strong>Gymnázia Říčany</strong> a máme vášeň
-                        pro programování a technologie. Našimi hlavními zájmy jsou informační technologie, zejména
-                        <strong>kyberbezpečnost</strong> – od exploitování kódu a binárních systémů přes OSINT až po
-                        penetration testing. Ale upřímně řečeno, webový vývoj nás baví nejvíc!
+                    <span class="hero-label">Fullstack Vývojáři</span>
+                    <h1 class="nadpis">Daniel & Jáchym</h1>
+                    <p class="hero-lead">
+                        Ahoj, jsme oba z <strong>Gymnázia Říčany</strong> a máme vášeň
+                        pro programování a technologie. Naším světem je kód, bezpečnost a tvoření věcí, které dávají
+                        smysl.
                     </p>
                     <p>
-                        Sice se zajímáme o všechny bezpečnostní věci, ale <strong>tvorba webů</strong> je naše největší
-                        vášeň. Pořád se učíme, experimentujeme s novými technologiemi a snažíme se být vždycky o krok
-                        napřed. Portfolio, které tady vidíte, je naší odpovědí na otázku: "Co jsme vlastně schopní
-                        udělat?".
+                        Zatímco nás fascinuje <strong>kyberbezpečnost</strong> – od exploitů po penetrační testování –
+                        naší největší vášní je <strong>tvorba moderních webů</strong>.
                     </p>
+                    <div class="hero-actions">
+                        <button
+                            onclick="document.querySelector('.hero-actions').scrollIntoView({behavior: 'smooth'})">Co
+                            umíme?</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="static/reactjs-svgrepo-com.svg" alt="React logo" class="react-hero-logo">
                 </div>
             </div>
         </section>
