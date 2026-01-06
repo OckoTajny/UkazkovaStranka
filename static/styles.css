@@ -678,7 +678,12 @@ footer {
         gap: 15px;
     }
 }
-.logo{
-    width: 100%;
+
+.img-wrapper .next-logo{
+    width: 256px;
+}
+
+.img-wrapper .sql-logo{
+    width: 300px;
 }
 /* ========== END OF STYLES ========== */
