@@ -19,7 +19,6 @@ app.add_middleware(
     allow_headers=["*"],  # Allows all headers
 )
 
-# Inicializace klienta (vlož svůj API klíč nebo ho měj v proměnných prostředí)
 # API_KEY = os.environ.get("GEMINI_API_KEY")
 client = genai.Client(api_key=os.environ.get("GOOGLE_API_KEY"))
 
