@@ -678,5 +678,7 @@ footer {
         gap: 15px;
     }
 }
-
+.img-wrapper img{
+    width: 100%;
+}
 /* ========== END OF STYLES ========== */
