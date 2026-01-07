@@ -4,6 +4,7 @@ async function run(event) {
     document.getElementById("aiResponse").innerText = "Loading...";
     const password = document.getElementById("password").value
     try {
+        //Odeslání requestu
         const response = await fetch("https://ukazkovastranka.onrender.com/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -14,20 +15,23 @@ async function run(event) {
         });
         const data = await response.json();
         const text = data.result;
+        //Špatný vypisování errorů
         if (text == undefined){
             document.getElementById("aiResponse").innerHTML = `<p  style="color: red;">Error: Wrong password</p>`;
             return; 
         }
-        // 4. Vypiš výsledek
+        //Vypsání výsledku
         console.log(text);
         document.getElementById("aiResponse").innerHTML = parseMarkdown(text);
     } catch (error) {
+        //Chycení chyby
         console.error("Chyba při komunikaci s AI:", error);
         document.getElementById("aiResponse").innerText = "Chyba při komunikaci s AI.";
     }
 }
 
 function parseMarkdown(text) {
+    //Formátování textu
     if (!text) return "";
     
     return text

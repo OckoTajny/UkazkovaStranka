@@ -19,16 +19,18 @@ app.add_middleware(
     allow_headers=["*"],  # Allows all headers
 )
 
-# API_KEY = os.environ.get("GEMINI_API_KEY")
+#Načte api_key
 client = genai.Client(api_key=os.environ.get("GOOGLE_API_KEY"))
 
-# Definice struktury příchozího JSONu
+#Definice obsahu JSONu který odešle front end
 class PromptRequest(BaseModel):
     userPrompt: str
     password: str
 
 @app.post("/")
 async def generate_response(request: PromptRequest):
+    #Generuje odpověď pomocí gemini-2.5-flash api
+    #Vím že není hashováni a že máme heslo na githubu je to naschvál 😊
     try:
         if request.password != "ricany":
             return {"message": "Wrong password", "success": False}
@@ -58,9 +60,11 @@ async def generate_response(request: PromptRequest):
         }
 
     except Exception as e:
+        #Chytá error
         print(f"Error: {e}")
         raise HTTPException(status_code=500, detail="Error 500")
 
 if __name__ == "__main__":
+    #Spustí server
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
